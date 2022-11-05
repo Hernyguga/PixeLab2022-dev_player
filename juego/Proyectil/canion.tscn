@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juego/Proyectil/canion.gd" type="Script" id=1]
+[ext_resource path="res://juego/Proyectil/Proyectil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Proyectil/LaserUlt.wav" type="AudioStream" id=3]
+
+[node name="canion" type="Node2D"]
+script = ExtResource( 1 )
+proyectil = ExtResource( 2 )
+cadencia_disparo = 0.25
+velocidad_proyectil = 1600
+
+[node name="PuntoIzq" type="Position2D" parent="."]
+
+[node name="PuntoDer" type="Position2D" parent="."]
+
+[node name="DisparoSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "DisparoSFX"
+
+[node name="TimerEnfriamiento" type="Timer" parent="."]
+wait_time = 0.8
+
+[connection signal="timeout" from="TimerEnfriamiento" to="." method="_on_TimerEnfriamiento_timeout"]

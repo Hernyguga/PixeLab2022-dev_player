@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego/Nave/NaveBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/Proyectil/canion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Enemigos/EnemigoInterceptor.gd" type="Script" id=3]
+[ext_resource path="res://juego/Proyectil/ProyectilEnemigo.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 161.697
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 202.121
+
+[node name="EnemigoInterceptor" instance=ExtResource( 1 )]
+collision_layer = 2
+contacts_reported = 2
+script = ExtResource( 3 )
+potencia_max = 800.0
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 1.19209e-07, 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 2, 2 )
+rotation = 1.5708
+
+[node name="canion" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 8, 0 )
+proyectil = ExtResource( 4 )
+cadencia_disparo = 1.2
+velocidad_proyectil = 1200
+
+[node name="PuntoIzq" parent="canion" index="0"]
+position = Vector2( 46, -33 )
+
+[node name="PuntoDer" parent="canion" index="1"]
+position = Vector2( 46, 33 )
+
+[node name="DisparoSFX" parent="canion" index="2"]
+position = Vector2( 9, -2 )
+
+[node name="SpriteSpawn" type="Sprite" parent="." index="5"]
+
+[node name="AreaDisparo" type="Area2D" parent="." index="6"]
+position = Vector2( -9, 31 )
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDisparo" index="0"]
+position = Vector2( 13, -30 )
+shape = SubResource( 1 )
+
+[node name="AreaDetencion" type="Area2D" parent="." index="7"]
+position = Vector2( -10, -26 )
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetencion" index="0"]
+position = Vector2( 13, 27 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_EnemigoInterceptor_body_entered"]
+[connection signal="body_entered" from="AreaDisparo" to="." method="_on_AreaDisparo_body_entered"]
+[connection signal="body_exited" from="AreaDisparo" to="." method="_on_AreaDisparo_body_exited"]
+[connection signal="body_entered" from="AreaDetencion" to="." method="_on_AreaDetencion_body_entered"]
+[connection signal="body_exited" from="AreaDetencion" to="." method="_on_AreaDetencion_body_exited"]
+
+[editable path="canion"]

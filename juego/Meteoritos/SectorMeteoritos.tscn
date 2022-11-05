@@ -1,0 +1,533 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://juego/Meteoritos/MeteoritoSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/Meteoritos/SectorMeteoritos.gd" type="Script" id=2]
+[ext_resource path="res://TemporalAssets/Bonus/kenvector_future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://juego/Meteoritos/Advertencia.ogg" type="AudioStream" id=4]
+[ext_resource path="res://juego/Meteoritos/Advertencia2.ogg" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 97.1818, 15 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 97.5455, 11 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 99.5361, 9.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 99.7938, 14 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 97.3913, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 97.5544, 17 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 100.75, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 100.571, 10 )
+
+[sub_resource type="Theme" id=9]
+
+[sub_resource type="DynamicFont" id=15]
+size = 15
+outline_color = Color( 64.16, 0, 0.74, 1 )
+extra_spacing_top = 3
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Advertencia"
+length = 4.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AdvertenciaSFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0, 0.9, 1.725, 2.6, 3.525, 4.325 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/ColorRect2/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.4, 2, 2.7, 3.4, 4.1, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.101961, 0.807843, 1 ), Color( 0.6, 0.321569, 0.678431, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0.101961, 0.807843, 1 ), Color( 0.6, 0.321569, 0.678431, 1 ), Color( 0, 0.101961, 0.807843, 1 ), Color( 0.6, 0.321569, 0.678431, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/ColorRect2/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/ColorRect2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 0.603922, 0.294118, 0.294118, 0.498039 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/ColorRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpawnTimer:autostart")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Advertencia2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/ColorRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 3.3, 3.5, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ), Color( 0.827451, 0.176471, 0.176471, 0.498039 ), Color( 1, 0, 0, 0.498039 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AdvertenciaSFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0, 0.9, 1.8, 2.7, 3.4 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SpawnTimer:autostart")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.101961, 0.807843, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/ColorRect2/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/ColorRect2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.603922, 0.294118, 0.294118, 0.498039 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/ColorRect2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpawnTimer:wait_time")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpawnTimer:one_shot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("SpawnTimer:autostart")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="SectorMeteoritos" type="Node2D"]
+light_mask = 31
+position = Vector2( 953, 525 )
+z_index = 50
+z_as_relative = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+intervalo_spawn = 1.5
+
+[node name="BordesNavesPlayer" type="Node2D" parent="."]
+visible = false
+position = Vector2( 11, -6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BordeIzq" type="StaticBody2D" parent="BordesNavesPlayer"]
+position = Vector2( -960, 2 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNavesPlayer/BordeIzq"]
+position = Vector2( -6.00001, -0.499939 )
+rotation = 1.5708
+scale = Vector2( 5.5, 1.2 )
+shape = SubResource( 1 )
+
+[node name="BordeDer" type="StaticBody2D" parent="BordesNavesPlayer"]
+position = Vector2( 960, 0 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNavesPlayer/BordeDer"]
+position = Vector2( -1, 1.5 )
+rotation = 1.5708
+scale = Vector2( 5.5, 1 )
+shape = SubResource( 2 )
+
+[node name="BordeSup" type="StaticBody2D" parent="BordesNavesPlayer"]
+position = Vector2( 3, -540 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNavesPlayer/BordeSup"]
+position = Vector2( -4.49988, -0.5 )
+scale = Vector2( 9.7, 1 )
+shape = SubResource( 3 )
+
+[node name="BordeInf" type="StaticBody2D" parent="BordesNavesPlayer"]
+position = Vector2( 0, 540 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNavesPlayer/BordeInf"]
+position = Vector2( -2, 4 )
+scale = Vector2( 9.7, 1 )
+shape = SubResource( 4 )
+
+[node name="DetectorFueraZona" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DetectorIzq" type="Area2D" parent="DetectorFueraZona"]
+position = Vector2( -1400, 0 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorIzq"]
+position = Vector2( -3.05176e-05, -11.0001 )
+rotation = 1.5708
+scale = Vector2( 9.2, 1 )
+shape = SubResource( 5 )
+
+[node name="DetectorDer" type="Area2D" parent="DetectorFueraZona"]
+position = Vector2( 1400, 0 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorDer"]
+position = Vector2( -7, -4.5 )
+rotation = 1.5708
+scale = Vector2( 9.2, 1 )
+shape = SubResource( 6 )
+
+[node name="DetectorSup" type="Area2D" parent="DetectorFueraZona"]
+position = Vector2( 0, -900 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorSup"]
+position = Vector2( 2.5, 3.5 )
+scale = Vector2( 14, 1 )
+shape = SubResource( 7 )
+
+[node name="DetectorInf" type="Area2D" parent="DetectorFueraZona"]
+position = Vector2( 0, 900 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorInf"]
+position = Vector2( 18, -15 )
+scale = Vector2( 14, 1 )
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spawners" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeteoritoSpawner" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1267, -271 )
+direccion = Vector2( 4, 1 )
+
+[node name="MeteoritoSpawner2" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 772, 774 )
+direccion = Vector2( -3, -1 )
+
+[node name="MeteoritoSpawner3" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 260, 800 )
+direccion = Vector2( -2, -1 )
+
+[node name="MeteoritoSpawner4" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -285, 827 )
+direccion = Vector2( 2, -1 )
+
+[node name="MeteoritoSpawner5" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -721, 787 )
+direccion = Vector2( 2, -1 )
+
+[node name="MeteoritoSpawner6" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1280, 706 )
+direccion = Vector2( 2, -1 )
+
+[node name="MeteoritoSpawner7" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1280, 162 )
+direccion = Vector2( 4, -1 )
+
+[node name="MeteoritoSpawner8" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1226, -672 )
+direccion = Vector2( 2, 1 )
+
+[node name="MeteoritoSpawner9" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -842, -719 )
+direccion = Vector2( 2, 1 )
+
+[node name="MeteoritoSpawner10" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -351, -733 )
+direccion = Vector2( 3, 1 )
+
+[node name="MeteoritoSpawner11" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 254, -727 )
+direccion = Vector2( -2, 1 )
+
+[node name="MeteoritoSpawner12" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 785, -700 )
+direccion = Vector2( -2, 1 )
+
+[node name="MeteoritoSpawner13" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 1223, -653 )
+direccion = Vector2( -2, 1 )
+
+[node name="MeteoritoSpawner14" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 1220, -193 )
+direccion = Vector2( -2, 1 )
+
+[node name="MeteoritoSpawner15" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 1202, 307 )
+direccion = Vector2( -2, -1 )
+
+[node name="MeteoritoSpawner16" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 1192, 829 )
+direccion = Vector2( -2, -1 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+follow_viewport_enable = true
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+modulate = Color( 0.380392, 0.176471, 0.176471, 0.388235 )
+anchor_right = 0.961
+margin_left = -345.0
+margin_top = -234.0
+margin_right = 383.88
+margin_bottom = 1322.0
+theme = SubResource( 9 )
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2"]
+modulate = Color( 0, 0, 0, 1 )
+light_mask = 15
+anchor_left = 0.16
+anchor_right = 0.269
+anchor_bottom = 0.224
+margin_left = 348.16
+margin_top = 609.0
+margin_right = 326.29
+margin_bottom = 464.392
+rect_scale = Vector2( 6, 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "       ADVERTENCIA
+               LLUVIA
+  DE METEORITOS!!!!!
+"
+max_lines_visible = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Advertencia2"
+reset_on_save = false
+anims/Advertencia = SubResource( 10 )
+anims/Advertencia2 = SubResource( 14 )
+anims/RESET = SubResource( 11 )
+anims/default = SubResource( 13 )
+
+[node name="AdvertenciaSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

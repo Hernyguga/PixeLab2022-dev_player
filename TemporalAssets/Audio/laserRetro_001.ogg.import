@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laserRetro_001.ogg-38e7d80e12cba614e0a513364c2a1f34.oggstr"
+
+[deps]
+
+source_file="res://TemporalAssets/Audio/laserRetro_001.ogg"
+dest_files=[ "res://.import/laserRetro_001.ogg-38e7d80e12cba614e0a513364c2a1f34.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

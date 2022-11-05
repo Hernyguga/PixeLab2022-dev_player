@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/explosionmeteoro.ogg-d994dd38a64c0db20bb4dbf3ed625ecf.oggstr"
+
+[deps]
+
+source_file="res://juego/Explosiones/explosionmeteoro.ogg"
+dest_files=[ "res://.import/explosionmeteoro.ogg-d994dd38a64c0db20bb4dbf3ed625ecf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

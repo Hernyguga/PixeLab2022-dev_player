@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sfx_laser2.ogg-d94793c01a674bc5f0bddb59f59acf96.oggstr"
+
+[deps]
+
+source_file="res://TemporalAssets/Bonus/sfx_laser2.ogg"
+dest_files=[ "res://.import/sfx_laser2.ogg-d94793c01a674bc5f0bddb59f59acf96.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

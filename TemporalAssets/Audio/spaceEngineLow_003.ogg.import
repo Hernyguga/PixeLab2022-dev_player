@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spaceEngineLow_003.ogg-9c1979538bec335a4c122ec4a0acb3d2.oggstr"
+
+[deps]
+
+source_file="res://TemporalAssets/Audio/spaceEngineLow_003.ogg"
+dest_files=[ "res://.import/spaceEngineLow_003.ogg-9c1979538bec335a4c122ec4a0acb3d2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

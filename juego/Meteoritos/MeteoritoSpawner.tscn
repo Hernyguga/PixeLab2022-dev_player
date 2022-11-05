@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://juego/Meteoritos/MeteoritoSpawner.gd" type="Script" id=1]
+
+[node name="MeteoritoSpawner" type="Position2D"]
+light_mask = 4
+position = Vector2( 5, 0 )
+script = ExtResource( 1 )
